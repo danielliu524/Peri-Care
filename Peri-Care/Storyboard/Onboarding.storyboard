@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Scanner Intro View Controller-->
+        <scene sceneID="D2Q-jt-7dJ">
+            <objects>
+                <viewController storyboardIdentifier="ScannerIntroViewController" id="W3h-YI-hSS" customClass="ScannerIntroViewController" customModule="Peri_Care" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6YK-0y-Chk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="Oir-bA-CpQ">
+                                <rect key="frame" x="57" y="237.5" width="300" height="421"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnF-1b-E9f">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="CHr-Tk-sfk"/>
+                                            <constraint firstAttribute="height" constant="300" id="dKW-Yv-MI4"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="focus"/>
+                                        <connections>
+                                            <segue destination="LKL-kj-5p7" kind="show" identifier="scan" id="1Tl-Xc-Mth"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ud1-Id-L2r">
+                                        <rect key="frame" x="52.5" y="370" width="195" height="51"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <state key="normal" title="Scan QRCode">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="LKL-kj-5p7" kind="show" identifier="scan" id="fuG-gk-AX5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Oir-bA-CpQ" firstAttribute="centerX" secondItem="6YK-0y-Chk" secondAttribute="centerX" id="bCZ-rR-y7M"/>
+                            <constraint firstItem="Oir-bA-CpQ" firstAttribute="centerY" secondItem="6YK-0y-Chk" secondAttribute="centerY" id="cNn-KT-RfI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Oej-Ym-YWS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="p3e-ZQ-aze"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p1Y-wR-L7M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="718.84057971014499" y="-48.214285714285715"/>
+        </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="17I-Ul-MsO">
+            <objects>
+                <viewController id="LKL-kj-5p7" customClass="ScannerViewController" customModule="Peri_Care" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ji9-Hk-dT5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjt-iZ-xVs">
+                                <rect key="frame" x="112" y="728" width="190" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9S3-ce-Ygf"/>
+                                    <constraint firstAttribute="width" constant="190" id="VA4-Wc-C8d"/>
+                                </constraints>
+                                <state key="normal" title="No QR Code Detected">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="scanButtonPressedWithSender:" destination="LKL-kj-5p7" eventType="touchUpInside" id="ZwL-bW-gbv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CwS-A9-qDk" firstAttribute="bottom" secondItem="mjt-iZ-xVs" secondAttribute="bottom" constant="30" id="18f-tO-19H"/>
+                            <constraint firstItem="mjt-iZ-xVs" firstAttribute="centerX" secondItem="Ji9-Hk-dT5" secondAttribute="centerX" id="g6n-vu-La8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CwS-A9-qDk"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MGX-ze-J9V"/>
+                    <connections>
+                        <outlet property="scanButton" destination="mjt-iZ-xVs" id="rBf-rk-aPM"/>
+                        <segue destination="rHZ-9S-cLT" kind="show" identifier="confirmSegue" id="Y8P-u0-oiy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ga7-IS-xbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1534.7826086956522" y="-48.214285714285715"/>
+        </scene>
+        <!--Scanner Confirm View Controller-->
+        <scene sceneID="vGv-ED-aXg">
+            <objects>
+                <viewController id="rHZ-9S-cLT" customClass="ScannerConfirmViewController" customModule="Peri_Care" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hhA-ba-8MK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="CmB-ZY-4uB">
+                                <rect key="frame" x="0.0" y="151" width="414" height="540"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="LJ3-in-ceC">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="310"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Operation Name:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haA-EK-Mii">
+                                                <rect key="frame" x="142" y="0.0" width="130" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Operation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhP-Cd-Q0r">
+                                                <rect key="frame" x="159" y="38.5" width="96" height="25.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Operation:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSm-3D-YFn">
+                                                <rect key="frame" x="136.5" y="82" width="141" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hP-UL-8V6">
+                                                <rect key="frame" x="184.5" y="120.5" width="45.5" height="25.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hospital:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yuc-t8-HkD">
+                                                <rect key="frame" x="173.5" y="164" width="67.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hospital" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECS-jo-DAb">
+                                                <rect key="frame" x="167" y="202.5" width="80" height="25.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c70-S2-yA6">
+                                                <rect key="frame" x="182.5" y="246" width="49" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxZ-9g-ZKg">
+                                                <rect key="frame" x="179" y="284.5" width="56" height="25.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Fmh-gK-x1r">
+                                        <rect key="frame" x="131" y="510" width="152" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDf-cU-VQ8">
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="30"/>
+                                                <state key="normal" title="Confirm">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="confirmPressedWithSender:" destination="rHZ-9S-cLT" eventType="touchUpInside" id="QIW-TP-8sN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NI9-bV-dvp">
+                                                <rect key="frame" x="95" y="0.0" width="57" height="30"/>
+                                                <state key="normal" title="Re-scan">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="scanAgainPressedWithSender:" destination="rHZ-9S-cLT" eventType="touchUpInside" id="pu9-ti-KGJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="LJ3-in-ceC" firstAttribute="leading" secondItem="CmB-ZY-4uB" secondAttribute="leading" id="2Ps-ne-GwT"/>
+                                    <constraint firstAttribute="trailing" secondItem="LJ3-in-ceC" secondAttribute="trailing" id="L9K-9Z-7hn"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CmB-ZY-4uB" firstAttribute="centerX" secondItem="hhA-ba-8MK" secondAttribute="centerX" id="MbT-p1-eQ3"/>
+                            <constraint firstItem="qDc-be-COz" firstAttribute="trailing" secondItem="CmB-ZY-4uB" secondAttribute="trailing" id="fJo-LO-3gG"/>
+                            <constraint firstItem="CmB-ZY-4uB" firstAttribute="leading" secondItem="qDc-be-COz" secondAttribute="leading" id="jqf-Rs-7CF"/>
+                            <constraint firstItem="CmB-ZY-4uB" firstAttribute="centerY" secondItem="hhA-ba-8MK" secondAttribute="centerY" id="mW9-MY-bXo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qDc-be-COz"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XeY-Wy-8ae"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="4hP-UL-8V6" id="WpI-fi-Iy9"/>
+                        <outlet property="hospitalLabel" destination="ECS-jo-DAb" id="D9Y-L6-yot"/>
+                        <outlet property="operationLabel" destination="QhP-Cd-Q0r" id="CoA-vR-J94"/>
+                        <outlet property="roomLabel" destination="nxZ-9g-ZKg" id="O7U-kh-DxJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="57y-fc-QkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2292.753623188406" y="-48.214285714285715"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="focus" width="150" height="150"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="fuG-gk-AX5"/>
+    </inferredMetricsTieBreakers>
+</document>

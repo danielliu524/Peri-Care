@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="18G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Information" representedClassName="InformationMO" syncable="YES" codeGenerationType="class">
+        <attribute name="contentImages" optional="YES" attributeType="Transformable"/>
+        <attribute name="contentText" optional="YES" attributeType="Transformable"/>
+        <attribute name="contentTitles" optional="YES" attributeType="Transformable"/>
+        <attribute name="isCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="order" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="User" representedClassName="UserMO" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="hospital" optional="YES" attributeType="String"/>
+        <attribute name="operation" optional="YES" attributeType="String"/>
+        <attribute name="room" optional="YES" attributeType="String"/>
+        <attribute name="smoker" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="steps" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="WoundPhotos" representedClassName="WoundPhotosMO" syncable="YES" codeGenerationType="class">
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="uploadDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <elements>
+        <element name="Information" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="User" positionX="-54" positionY="-9" width="128" height="148"/>
+        <element name="WoundPhotos" positionX="-54" positionY="36" width="128" height="73"/>
+    </elements>
+</model>
